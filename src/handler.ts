@@ -1,5 +1,5 @@
 import { Bot, Context, Logger, Session } from 'koishi'
-import { Config } from './config'
+import { Config, DEFAULT_WHITELIST } from './config'
 import { MasterNotifier } from './notifier'
 
 const logger = new Logger('no-strange-channel:handler')
@@ -23,7 +23,10 @@ export class ChannelGuardHandler {
   isWhitelisted(channelOrGuildId?: string): boolean {
     if (!channelOrGuildId) return false
     const normalized = channelOrGuildId.trim().toLowerCase()
-    return this.config.whitelist.some(item => item.trim().toLowerCase() === normalized)
+    const list = Array.isArray(this.config.whitelist) && this.config.whitelist.length > 0
+      ? this.config.whitelist
+      : DEFAULT_WHITELIST
+    return list.some(item => item && item.trim().toLowerCase() === normalized)
   }
 
   /**

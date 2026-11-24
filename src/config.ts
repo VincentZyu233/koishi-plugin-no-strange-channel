@@ -37,6 +37,27 @@ export interface Config {
   masterAccounts: MasterAccount[]
 }
 
+/** 默认预设的 17 个群聊白名单 (来自 llbot-awa) */
+export const DEFAULT_WHITELIST: string[] = [
+  '752878019',   // Team MC CXVI
+  '1048545686',  // 薰衣草の药园
+  '945331687',   // 呐卷
+  '958366323',   // 官野bot开发测试
+  '622214292',   // steam游戏交流群
+  '953370779',   // Koishi 嵌入式开发
+  '1002325057',  // LowrAI以及可爱zyu的newapi捏
+  '1020396213',  // 神秘的机场拼车喵
+  '621213418',   // (*≧▽≦) xql撒欢群！
+  '1108448981',  // 2027年第一届“提云Z杯”线上联考（一）
+  '1098191922',  // 𝔽𝕝𝕒𝕣𝕖𝕏𝕖𝕣的数码群😋
+  '1044619427',  // awa测试
+  '1137138243',  // 神秘gpt的拼pro100
+  '1085190201',  // 3水_awa群
+  '942033342',   // 平躺天堂（相亲相爱玛丽家）
+  '809462478',   // (*≧▽≦) CS撒欢群！
+  '475328908',   // Nonebot2-sky光遇交流群
+]
+
 export const Config: Schema<Config> = Schema.intersect([
   Schema.object({
     enabled: Schema.boolean()
@@ -45,26 +66,8 @@ export const Config: Schema<Config> = Schema.intersect([
 
     whitelist: Schema.array(Schema.string())
       .role('table')
-      .default([
-        '752878019',   // Team MC CXVI
-        '1048545686',  // 薰衣草の药园
-        '945331687',   // 呐卷
-        '958366323',   // 官野bot开发测试
-        '622214292',   // steam游戏交流群
-        '953370779',   // Koishi 嵌入式开发
-        '1002325057',  // LowrAI以及可爱zyu的newapi捏
-        '1020396213',  // 神秘的机场拼车喵
-        '621213418',   // (*≧▽≦) xql撒欢群！
-        '1108448981',  // 2027年第一届“提云Z杯”线上联考（一）
-        '1098191922',  // 𝔽𝕝𝕒𝕣𝕖𝕏𝕖𝕣的数码群😋
-        '1044619427',  // awa测试
-        '1137138243',  // 神秘gpt的拼pro100
-        '1085190201',  // 3水_awa群
-        '942033342',   // 平躺天堂（相亲相爱玛丽家）
-        '809462478',   // (*≧▽≦) CS撒欢群！
-        '475328908',   // Nonebot2-sky光遇交流群
-      ])
-      .description('📋 授权群聊/频道 ID 白名单（在 OneBot 协议中填入 QQ 群号，默认预设当前已加入的 17 个群聊）'),
+      .default(DEFAULT_WHITELIST)
+      .description('📋 授权群聊/频道 ID 白名单（在 OneBot 协议中填入 QQ 群号，默认硬编码预设已加入的 17 个群聊）'),
   }).description('🛡️ 核心开关与白名单'),
 
   Schema.object({
