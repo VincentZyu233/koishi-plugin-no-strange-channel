@@ -1,5 +1,8 @@
 # koishi-plugin-no-strange-channel
 
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/VincentZyu233/koishi-plugin-no-strange-channel)
+[![Gitee](https://img.shields.io/badge/Gitee-C71D23?style=for-the-badge&logo=gitee&logoColor=white)](https://gitee.com/vincent-zyu/koishi-plugin-no-strange-channel)
+
 基于 Satori 协议的标准全平台**防乱拉群、自动拒绝陌生群邀请与自动退群**防风控安全卫士插件。
 
 ---

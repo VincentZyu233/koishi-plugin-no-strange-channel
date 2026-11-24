@@ -9,6 +9,11 @@
     "dist"
   ],
   "license": "MIT",
+  "homepage": "https://github.com/VincentZyu233/koishi-plugin-no-strange-channel",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VincentZyu233/koishi-plugin-no-strange-channel.git"
+  },
   "keywords": [
     "chatbot",
     "koishi",
